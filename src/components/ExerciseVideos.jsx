@@ -3,7 +3,7 @@ import { Box, Stack, Typography } from '@mui/material';
 
 function ExerciseVideos({ exerciseVideos, name }) {
 
-  console.log(exerciseVideos);
+  // console.log(exerciseVideos);
 
   if(!exerciseVideos.length) return "Loading...";
 

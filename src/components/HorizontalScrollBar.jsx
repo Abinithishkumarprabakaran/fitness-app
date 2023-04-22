@@ -38,12 +38,13 @@ export default function HorizontalScrollBar({ data, bodyPart, setBodyPart, isBod
               title={item.id || item}
               m="0 40px"
             >
-              {isBodyParts ?
+              {
+              isBodyParts ?
                 <BodyPart item={item}
                   bodyPart={bodyPart}
                   setBodyPart={setBodyPart}/>
-                : 
-                <ExerciseCard item={item} />}
+                : <ExerciseCard exercise={item} />
+                }
 
                 {/* {item} */}
 

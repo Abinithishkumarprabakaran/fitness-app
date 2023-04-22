@@ -26,10 +26,10 @@ export default function ExerciseDetail() {
       const exerciseVideosData = await fetchData(`${youtubeSearchUrl}/search?query=$${exerciseDetailData.name}`, youtubeOptions)
       setExerciseVideos(exerciseVideosData.contents)
 
-      const targetMuscleExercisesData = await fetchData(`${exerciseDbUrl}/exercises/target/${exerciseDetail.target}`, exerciseOptions)
+      const targetMuscleExercisesData = await fetchData(`${exerciseDbUrl}/exercises/target/${exerciseDetailData.target}`, exerciseOptions)
       setTargetMuscleExercises(targetMuscleExercisesData)
 
-      const equipmentExercisesData = await fetchData(`${exerciseDbUrl}/exercises/equipment/${exerciseDetail.equipment}`, exerciseOptions)
+      const equipmentExercisesData = await fetchData(`${exerciseDbUrl}/exercises/equipment/${exerciseDetailData.equipment}`, exerciseOptions)
       setEquipmentExercises(equipmentExercisesData)
     }
 
@@ -39,7 +39,7 @@ export default function ExerciseDetail() {
     <Box>
       <Detail exerciseDetail={exerciseDetail} />
       <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
-      <SimilarExercises targetMuscleExercises={targetMuscleExercises} equipmentExercise={equipmentExercises}/>
+      <SimilarExercises targetMuscleExercises={targetMuscleExercises} equipmentExercises={equipmentExercises}/>
     </Box>
   )
 }
